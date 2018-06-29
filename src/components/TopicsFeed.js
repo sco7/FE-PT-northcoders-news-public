@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Topics extends React.Component {
+class TopicsFeed extends React.Component {
   state = {
     topics: [],
     loading: true
@@ -23,18 +23,13 @@ class Topics extends React.Component {
     console.log('render');
     const { topics } = this.state;
     return (
-      <form id="Topics">
+      <form id="TopicsFeed">
         <h2>Topics</h2>
         {topics.map(topic => {
-          //if (tweet.user.name === 'Northcoders Students')
           return (
               <Topic id='topics'
-                //profileImage={tweet.user.profile_image_url}
                 topic={topic.title}
-                //votes={article.votes}
-                //comments={article.comment_count}
-                //tweet={tweet.text}
-                //date={tweet.created_at}
+                
               />
           );
         })}
@@ -53,4 +48,4 @@ const Topic = props => {
   );
 };
 
-export default Topics;
+export default TopicsFeed;

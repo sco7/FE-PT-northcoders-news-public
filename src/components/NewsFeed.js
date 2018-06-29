@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NewsFeed extends React.Component {
   state = {
@@ -26,32 +27,20 @@ class NewsFeed extends React.Component {
       <form id="NewsFeed">
         <h2>NewsFeed</h2>
         {articles.map(article => {
-          //if (tweet.user.name === 'Northcoders Students')
           return (
-              <Article id='articles'
-                //profileImage={tweet.user.profile_image_url}
-                article={article.title}
-                votes={article.votes}
-                comments={article.comment_count}
-                //tweet={tweet.text}
-                //date={tweet.created_at}
-              />
+            <div key={article._id}>
+              <Link to={`/articles/${article._id}`}>
+                <h6>{article.title}</h6>
+              </Link>
+              <p>
+                comments: {article.comment_count} &emsp; votes: {article.votes}
+              </p>
+            </div>
           );
         })}
       </form>
     );
   }
 }
-
-const Article = props => {
-  return (
-    <div>
-      <span>
-        <h6>{props.article}</h6>
-        <p>votes {props.votes}  &nbsp; &nbsp; &nbsp; comments {props.comments}</p>
-      </span>
-    </div>
-  );
-};
 
 export default NewsFeed;
