@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import NewsFeed from '../components/NewsFeed';
 import TopicsFeed from '../components/TopicsFeed';
 
