@@ -22,7 +22,6 @@ class ArticleView extends Component {
       });
     });
   }
-
   render() {
     console.log('render');
     const { title, body, loading } = this.state.article;
@@ -31,7 +30,7 @@ class ArticleView extends Component {
        <nav>
             <Link to="/">Back</Link>
           </nav>
-        {loading ? (
+        {this.state.loading ? (
           <p>Article loading........</p>
         ) : (
           <div class="row">

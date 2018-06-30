@@ -24,6 +24,10 @@ class NewsFeed extends React.Component {
     console.log('render');
     const { articles } = this.state;
     return (
+      <div>
+      {this.state.loading ? (
+          <p>Newsfeed loading........</p>
+        ) : (
       <form id="NewsFeed">
         <h2 id ="NewsFeedTitle">NewsFeed</h2>
         {articles.map(article => {
@@ -39,6 +43,8 @@ class NewsFeed extends React.Component {
           );
         })}
       </form>
+        )}
+      </div>
     );
   }
 }

@@ -23,6 +23,10 @@ class TopicsFeed extends React.Component {
     console.log('render');
     const { topics } = this.state;
     return (
+      <div>
+      {this.state.loading ? (
+          <p>Newsfeed loading........</p>
+        ) : (
       <form id="TopicsFeed">
         <h2>Topics</h2>
         {topics.map(topic => {
@@ -34,6 +38,8 @@ class TopicsFeed extends React.Component {
           );
         })}
       </form>
+        )}
+        </div>
     );
   }
 }

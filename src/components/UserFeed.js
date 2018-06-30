@@ -23,6 +23,10 @@ class UserFeed extends React.Component {
     console.log('render');
     const { users } = this.state;
     return (
+     <div>
+      {this.state.loading ? (
+          <p>Users loading........</p>
+        ) : ( 
       <form id="UserFeed">
         <h2>Users</h2>
         {users.map(user => {
@@ -34,6 +38,8 @@ class UserFeed extends React.Component {
           );
         })}
       </form>
+        )}
+        </div>
     );
   }
 }
