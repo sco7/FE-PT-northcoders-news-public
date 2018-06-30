@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import SingleArticleView from './components/ArticleView';
+import ArticleView from './components/ArticleView';
 import Navbar from './components/navbar';
 
 class App extends Component {
@@ -13,12 +13,10 @@ class App extends Component {
         <div>
           <div>
             <Navbar />
-          <nav>
-            <Link to="/">Home</Link>
-          </nav>
+         
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/articles/:articleId" component={SingleArticleView} />
+            <Route path="/articles/:articleId" component={ArticleView} />
           </Switch>
         </div>
         </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import { Link } from 'react-router-dom';
 import { getArticleById } from '../components/api';
 
 class ArticleView extends Component {
@@ -26,14 +28,16 @@ class ArticleView extends Component {
     const { title, body, loading } = this.state.article;
     return (
       <div>
+       <nav>
+            <Link to="/">Back</Link>
+          </nav>
         {loading ? (
           <p>Article loading........</p>
         ) : (
           <div class="row">
             <div class="col-sm" />
             <div class="col-8">
-              <h2>Article</h2>
-              <h5>{title}</h5>
+              <h2>{title}</h2>
               <p>{body}</p>
             </div>
             <div class="col-sm" />

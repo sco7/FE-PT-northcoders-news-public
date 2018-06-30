@@ -25,10 +25,10 @@ class NewsFeed extends React.Component {
     const { articles } = this.state;
     return (
       <form id="NewsFeed">
-        <h2>NewsFeed</h2>
+        <h2 id ="NewsFeedTitle">NewsFeed</h2>
         {articles.map(article => {
           return (
-            <div key={article._id}>
+            <div id='NewsFeedRollUp' key={article._id}>
               <Link to={`/articles/${article._id}`}>
                 <h6>{article.title}</h6>
               </Link>
