@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAllUsers } from './api';
 
 class UserFeed extends React.Component {
   state = {
@@ -7,11 +8,7 @@ class UserFeed extends React.Component {
   };
   componentDidMount() {
     console.log('loading');
-    fetch('https://young-reef-95329.herokuapp.com/api/users')
-      .then(res => {
-        console.log(res);
-        return res.json();
-      })
+    getAllUsers()
       .then(body => {
         this.setState({
           users: body.users,

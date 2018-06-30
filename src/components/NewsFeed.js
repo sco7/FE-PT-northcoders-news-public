@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { getAllArticles } from '../components/api';
+
 class NewsFeed extends React.Component {
   state = {
     articles: [],
@@ -8,11 +10,7 @@ class NewsFeed extends React.Component {
   };
   componentDidMount() {
     console.log('loading');
-    fetch('https://young-reef-95329.herokuapp.com/api/articles')
-      .then(res => {
-        console.log(res);
-        return res.json();
-      })
+    getAllArticles()
       .then(body => {
         this.setState({
           articles: body.articles,
@@ -34,8 +32,9 @@ class NewsFeed extends React.Component {
           return (
             <div id='NewsFeedRollUp' key={article._id}>
               <Link to={`/articles/${article._id}`}>
-                <h6>{article.title}</h6>
+                <h5>{article.title}</h5>
               </Link>
+              <br />
               <p>
                 comments: {article.comment_count} &emsp; votes: {article.votes}
               </p>

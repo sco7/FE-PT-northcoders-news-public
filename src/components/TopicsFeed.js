@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { getAllTopics } from './api';
+
 class TopicsFeed extends React.Component {
   state = {
     topics: [],
@@ -7,11 +9,7 @@ class TopicsFeed extends React.Component {
   };
   componentDidMount() {
     console.log('loading');
-    fetch('https://young-reef-95329.herokuapp.com/api/topics')
-      .then(res => {
-        console.log(res);
-        return res.json();
-      })
+    getAllTopics()
       .then(body => {
         this.setState({
           topics: body.topics,
