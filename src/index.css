@@ -17,3 +17,15 @@ body {
 .col-8 {
   background-color: white;
 }
+
+#TopicsFeed {
+  padding: 1em;
+}
+
+#UserFeed {
+  padding: 1em;
+}
+
+#NewsFeed {
+  padding-top: 1em;
+}

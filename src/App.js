@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ArticleView from './components/ArticleView';
 import Navbar from './components/navbar';
+import UserView from './components/UserView';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/articles/:articleId" component={ArticleView} />
+            <Route path="/users/:userId" component={UserView} />
           </Switch>
         </div>
         </div>

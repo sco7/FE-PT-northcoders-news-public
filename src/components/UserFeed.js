@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { getAllUsers } from './api';
 
 class UserFeed extends React.Component {
@@ -28,10 +30,11 @@ class UserFeed extends React.Component {
         <h2>Users</h2>
         {users.map(user => {
           return (
-              <Topic id='users'
-                users={user.name}
-                
-              />
+            <div id='UserFeedRollUp' key={user.name}>
+              <Link to={`/users/${user.username}`}>
+                <p>{user.name}</p>
+              </Link>
+              </div>
           );
         })}
       </form>
@@ -40,15 +43,5 @@ class UserFeed extends React.Component {
     );
   }
 }
-
-const Topic = props => {
-  return (
-    <div>
-      <span>
-        <p>{props.users}</p>
-      </span>
-    </div>
-  );
-};
 
 export default UserFeed;
