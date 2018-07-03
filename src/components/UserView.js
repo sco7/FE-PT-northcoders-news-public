@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
-import { getUserById } from '../components/api';
+import { getUserById } from './api';
 
 class UserView extends Component {
   state = {
@@ -24,7 +24,7 @@ class UserView extends Component {
   }
   render() {
     console.log('render');
-    const { username, name, loading } = this.state.user;
+    const { username, name, avatar_url} = this.state.user;
     return (
       <div>
        <nav>
@@ -35,7 +35,8 @@ class UserView extends Component {
         ) : (
           <div class="row">
             <div class="col-sm" />
-            <div class="col-8">
+            <div class="col-4">
+            <img src={avatar_url} alt="avatar"></img>
               <h2>{username}</h2>
               <p>{name}</p>
             </div>

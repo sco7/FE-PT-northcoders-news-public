@@ -29,3 +29,13 @@ body {
 #NewsFeed {
   padding-top: 1em;
 }
+
+#CommentBody {
+  padding-top: 1em;
+  font-size: 14px;
+}
+
+#ArticleBody {
+  padding-bottom: 1em;
+  font-size: 18px;
+}
