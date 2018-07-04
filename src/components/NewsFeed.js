@@ -17,6 +17,9 @@ class NewsFeed extends React.Component {
           loading: false
         });
       });
+
+
+
   }
   render() {
     console.log('render');

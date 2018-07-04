@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
-import { getArticleById, getCommentsByArticle } from '../components/api';
+import {
+  getArticleById,
+  getCommentsByArticle,
+  putArticleVotesByIdLike,
+  putArticleVotesByIdDislike
+} from '../components/api';
 
 class ArticleView extends Component {
   state = {
@@ -10,18 +15,36 @@ class ArticleView extends Component {
     loading: true
   };
 
+  handleClickVoteLike = event => {
+    event.preventDefault();
+    putArticleVotesByIdLike(this.props.match.params.articleId).then(res => {
+      this.setState({
+        article: res.article
+      });
+    });
+  };
+
+  handleClickVoteDislike = event => {
+    event.preventDefault();
+    putArticleVotesByIdDislike(this.props.match.params.articleId).then(res => {
+      this.setState({
+        article: res.article
+      });
+    });
+  };
+
   componentDidMount() {
     console.log('loading');
     const { articleId } = this.props.match.params;
     console.log(articleId);
-    getArticleById(this.props.match.params.articleId)
-    .then(articleData => {
+    getArticleById(this.props.match.params.articleId).then(articleData => {
       console.log(articleData, 'mounted', articleId);
       this.setState({
         article: articleData.articles[0],
         loading: false
       });
     });
+
     getCommentsByArticle(this.props.match.params.articleId).then(
       commentData => {
         console.log(commentData, 'mounted', articleId);
@@ -31,9 +54,10 @@ class ArticleView extends Component {
       }
     );
   }
+
   render() {
     console.log('render');
-    const { title, body } = this.state.article;
+    const { id, title, body, votes } = this.state.article;
     const { comments } = this.state;
     return (
       <div>
@@ -46,8 +70,18 @@ class ArticleView extends Component {
           <div class="row">
             <div class="col-sm" />
             <div class="col-8">
-              <h1>{title}</h1>  
+              <h1>{title}</h1>
               <p id="ArticleBody">{body}</p>
+              <p>
+                votes: {votes} &emsp;
+                <button id="likeArticle" onClick={this.handleClickVoteLike}>
+                  Like
+                </button>{' '}
+                &emsp;
+                <button id="dislikeArticle" onClick={this.handleClickVoteDislike}>
+                  Dislike
+                </button>
+              </p>
               {comments.map(comment => {
                 return (
                   <div>

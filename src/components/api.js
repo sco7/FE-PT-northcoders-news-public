@@ -1,4 +1,3 @@
-
 export const getArticleById = articleId => {
   const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}`;
   return fetch(url).then(res => {
@@ -55,3 +54,16 @@ export const getArticlesByTopic = topicId => {
   });
 };
 
+export const putArticleVotesByIdLike = articleId => {
+  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}?vote=up`;
+  return fetch(url, { method: 'PUT' }).then(res => {
+    return res.json();
+  });
+};
+
+export const putArticleVotesByIdDislike = articleId => {
+  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}?vote=down`;
+  return fetch(url, { method: 'PUT' }).then(res => {
+    return res.json();
+  });
+};
