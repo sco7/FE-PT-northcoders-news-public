@@ -57,13 +57,16 @@ class ArticleView extends Component {
 
   render() {
     console.log('render');
-    const { id, title, body, votes } = this.state.article;
+    const { _id, title, body, votes } = this.state.article;
     const { comments } = this.state;
     return (
       <div>
         <nav>
           <Link to="/">Back</Link>
         </nav>
+        <nav>
+          <Link to={`/AddComment/${_id}`}>Post New Comment</Link>
+          </nav>
         {this.state.loading ? (
           <p>Article loading........</p>
         ) : (

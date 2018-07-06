@@ -67,3 +67,11 @@ export const putArticleVotesByIdDislike = articleId => {
     return res.json();
   });
 };
+
+export const postCommentToArticle = (articleId, comment) => {
+  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}/comments`;
+  return fetch(`${url}`, {method: 'POST', headers: new Headers({'Content-Type': 'application/json'}), body: JSON.stringify({comment})})
+  .then(res => {
+      return res.json()
+  })
+}
