@@ -6,6 +6,14 @@ export const getArticleById = articleId => {
   });
 };
 
+export const getCommentById = commentId => {
+  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}`;
+  return fetch(url).then(res => {
+    if (res.status === 404) throw new Error(res.statusText);
+    return res.json();
+  });
+};
+
 export const getAllArticles = () => {
   const url = 'https://young-reef-95329.herokuapp.com/api/articles';
   return fetch(url).then(res => {
@@ -75,3 +83,22 @@ export const postCommentToArticle = (articleId, comment) => {
       return res.json()
   })
 }
+
+export const putCommentVotesByIdLike = commentId => {
+  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}?vote=up`;
+  return fetch(url, { method: 'PUT' }).then(res => {
+    return res.json();
+  });
+};
+
+export const putCommentVotesByIdDislike = commentId => {
+  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}?vote=down`;
+  return fetch(url, { method: 'PUT' }).then(res => {
+    return res.json();
+  });
+};
+
+export const deleteCommentById = commentId => {
+  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}`;
+  return fetch(url, { method: 'DELETE' })
+};
