@@ -6,6 +6,8 @@ export const getArticleById = articleId => {
   });
 };
 
+https://nc-be-northcoders-news.herokuapp.com
+
 export const getCommentById = commentId => {
   const url = `https://nc-be-northcoders-news.herokuapp.com/api/comments/${commentId}`;
   return fetch(url).then(res => {
@@ -63,7 +65,7 @@ export const getArticlesByTopic = topicId => {
 };
 
 export const putArticleVotesByIdLike = articleId => {
-  const url = `https://ync-be-northcoders-news.herokuapp.com/api/articles/${articleId}?vote=up`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/articles/${articleId}?vote=up`;
   return fetch(url, { method: 'PUT' }).then(res => {
     return res.json();
   });
