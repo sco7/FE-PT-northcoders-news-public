@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-
 import { Link } from 'react-router-dom';
 import {
   getCommentById,
   putCommentVotesByIdLike,
   putCommentVotesByIdDislike,
   deleteCommentById
-  } from '../components/api';
+} from '../components/api';
 
 class CommentView extends Component {
   state = {
@@ -60,9 +59,7 @@ class CommentView extends Component {
     return (
       <div>
         <nav>
-        <Link to={`/`}>
-            Back
-          </Link>
+          <Link to={`/`}>Back</Link>
         </nav>
         {this.state.loading ? (
           <p>Comment loading........</p>
@@ -74,16 +71,25 @@ class CommentView extends Component {
               <p id="CommentBody">{body}</p>
               <p>
                 votes: {votes} &emsp;
-                <button id="likeComment" onClick={this.handleCommentClickVoteLike}>
+                <button
+                  id="likeComment"
+                  onClick={this.handleCommentClickVoteLike}
+                >
                   Like
                 </button>{' '}
                 &emsp;
-                <button id="dislikeComment" onClick={this.handleCommentClickVoteDislike}>
+                <button
+                  id="dislikeComment"
+                  onClick={this.handleCommentClickVoteDislike}
+                >
                   Dislike
                 </button>
                 &emsp;
-                <button id="deleteComment" onClick={this.handleCommentDeleteComment}>
-                <Link to="/">Delete Comment</Link>
+                <button
+                  id="deleteComment"
+                  onClick={this.handleCommentDeleteComment}
+                >
+                  <Link to="/">Delete Comment</Link>
                 </button>
               </p>
             </div>

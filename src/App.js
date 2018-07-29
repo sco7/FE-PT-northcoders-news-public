@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ArticleView from './components/ArticleView';

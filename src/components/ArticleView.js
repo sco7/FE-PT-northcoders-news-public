@@ -66,7 +66,7 @@ class ArticleView extends Component {
         </nav>
         <nav>
           <Link to={`/addComment/${_id}`}>Post New Comment</Link>
-          </nav>
+        </nav>
         {this.state.loading ? (
           <p>Article loading........</p>
         ) : (
@@ -81,7 +81,10 @@ class ArticleView extends Component {
                   Like
                 </button>{' '}
                 &emsp;
-                <button id="dislikeArticle" onClick={this.handleClickVoteDislike}>
+                <button
+                  id="dislikeArticle"
+                  onClick={this.handleClickVoteDislike}
+                >
                   Dislike
                 </button>
               </p>
@@ -89,10 +92,10 @@ class ArticleView extends Component {
               <h4>Comments</h4>
               {comments.map(comment => {
                 return (
-                    <div id="CommentBody" key={comment._id}>
-                      <Link to={`/comments/${comment._id}`}> 
+                  <div id="CommentBody" key={comment._id}>
+                    <Link to={`/comments/${comment._id}`}>
                       <q>{comment.body}</q>
-                      </Link>
+                    </Link>
                     <p>
                       {comment.created_by} &emsp; votes: {comment.votes}
                     </p>

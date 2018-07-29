@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Link } from 'react-router-dom';
 import { getArticlesByTopic } from './api';
 
@@ -21,6 +20,7 @@ class TopicView extends Component {
       });
     });
   }
+  
   render() {
     console.log('render');
     const { articles } = this.state;

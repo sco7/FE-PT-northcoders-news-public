@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { getAllTopics } from './api';
 
 class TopicsFeed extends React.Component {
@@ -17,6 +16,7 @@ class TopicsFeed extends React.Component {
       });
     });
   }
+  
   render() {
     console.log('render');
     const { topics } = this.state;

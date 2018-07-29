@@ -99,6 +99,7 @@ export const putCommentVotesByIdDislike = commentId => {
 };
 
 export const deleteCommentById = commentId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}`;
+  const url = `https://young-reef-95329.herokuapp.cerIdom/api/comments/${commentId}`;
   return fetch(url, { method: 'DELETE' })
 };
+
