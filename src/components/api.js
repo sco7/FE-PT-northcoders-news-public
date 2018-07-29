@@ -1,5 +1,5 @@
 export const getArticleById = articleId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/articles/${articleId}`;
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -7,7 +7,7 @@ export const getArticleById = articleId => {
 };
 
 export const getCommentById = commentId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/comments/${commentId}`;
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -15,7 +15,7 @@ export const getCommentById = commentId => {
 };
 
 export const getAllArticles = () => {
-  const url = 'https://young-reef-95329.herokuapp.com/api/articles';
+  const url = 'https://nc-be-northcoders-news.herokuapp.com/api/articles';
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -23,7 +23,7 @@ export const getAllArticles = () => {
 };
 
 export const getAllUsers = () => {
-  const url = 'https://young-reef-95329.herokuapp.com/api/users';
+  const url = 'https://nc-be-northcoders-news.herokuapp.com/api/users';
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -31,7 +31,7 @@ export const getAllUsers = () => {
 };
 
 export const getUserById = userId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/users/${userId}`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/users/${userId}`;
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -39,7 +39,7 @@ export const getUserById = userId => {
 };
 
 export const getAllTopics = () => {
-  const url = 'https://young-reef-95329.herokuapp.com/api/topics';
+  const url = 'https://nc-be-northcoders-news.herokuapp.com/api/topics';
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -47,7 +47,7 @@ export const getAllTopics = () => {
 };
 
 export const getCommentsByArticle = articleId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}/comments`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/articles/${articleId}/comments`;
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -55,7 +55,7 @@ export const getCommentsByArticle = articleId => {
 };
 
 export const getArticlesByTopic = topicId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/topics/${topicId}/articles`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/topics/${topicId}/articles`;
   return fetch(url).then(res => {
     if (res.status === 404) throw new Error(res.statusText);
     return res.json();
@@ -63,21 +63,21 @@ export const getArticlesByTopic = topicId => {
 };
 
 export const putArticleVotesByIdLike = articleId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}?vote=up`;
+  const url = `https://ync-be-northcoders-news.herokuapp.com/api/articles/${articleId}?vote=up`;
   return fetch(url, { method: 'PUT' }).then(res => {
     return res.json();
   });
 };
 
 export const putArticleVotesByIdDislike = articleId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}?vote=down`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/articles/${articleId}?vote=down`;
   return fetch(url, { method: 'PUT' }).then(res => {
     return res.json();
   });
 };
 
 export const postCommentToArticle = (articleId, comment) => {
-  const url = `https://young-reef-95329.herokuapp.com/api/articles/${articleId}/comments`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/articles/${articleId}/comments`;
   return fetch(`${url}`, {method: 'POST', headers: new Headers({'Content-Type': 'application/json'}), body: JSON.stringify({comment})})
   .then(res => {
       return res.json()
@@ -85,21 +85,21 @@ export const postCommentToArticle = (articleId, comment) => {
 }
 
 export const putCommentVotesByIdLike = commentId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}?vote=up`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/comments/${commentId}?vote=up`;
   return fetch(url, { method: 'PUT' }).then(res => {
     return res.json();
   });
 };
 
 export const putCommentVotesByIdDislike = commentId => {
-  const url = `https://young-reef-95329.herokuapp.com/api/comments/${commentId}?vote=down`;
+  const url = `https://nc-be-northcoders-news.com/api/comments/${commentId}?vote=down`;
   return fetch(url, { method: 'PUT' }).then(res => {
     return res.json();
   });
 };
 
 export const deleteCommentById = commentId => {
-  const url = `https://young-reef-95329.herokuapp.cerIdom/api/comments/${commentId}`;
+  const url = `https://nc-be-northcoders-news.herokuapp.cerIdom/api/comments/${commentId}`;
   return fetch(url, { method: 'DELETE' })
 };
 
