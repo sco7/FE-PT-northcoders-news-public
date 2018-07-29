@@ -92,7 +92,7 @@ export const putCommentVotesByIdLike = commentId => {
 };
 
 export const putCommentVotesByIdDislike = commentId => {
-  const url = `https://nc-be-northcoders-news.com/api/comments/${commentId}?vote=down`;
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/comments/${commentId}?vote=down`;
   return fetch(url, { method: 'PUT' }).then(res => {
     return res.json();
   });
