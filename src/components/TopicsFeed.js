@@ -7,6 +7,7 @@ class TopicsFeed extends React.Component {
     topics: [],
     loading: true
   };
+  
   componentDidMount() {
     console.log('loading');
     getAllTopics().then(body => {

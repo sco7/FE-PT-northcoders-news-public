@@ -7,6 +7,7 @@ class NewsFeed extends React.Component {
     articles: [],
     loading: true
   };
+  
   componentDidMount() {
     console.log('loading');
     getAllArticles().then(body => {
