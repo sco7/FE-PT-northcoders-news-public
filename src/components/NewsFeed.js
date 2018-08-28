@@ -28,6 +28,12 @@ class NewsFeed extends React.Component {
         ) : (
           <form id="NewsFeed">
             <h2 id="NewsFeedTitle">NewsFeed</h2>
+
+            <Link to={`/addArticle`}>
+            <button id="AddArticleLinkButton">
+                  Write New Article
+                </button>{' '}
+          </Link>
             {articles.map(article => {
               return (
                 <div id="NewsFeedRollUp" key={article._id}>

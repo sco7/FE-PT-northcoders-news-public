@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Link } from 'react-router-dom';
 import {
   getArticleById,
@@ -97,7 +96,7 @@ class ArticleView extends Component {
                       <q>{comment.body}</q>
                     </Link>
                     <p>
-                      {comment.created_by} &emsp; votes: {comment.votes}
+                      votes: {comment.votes}
                     </p>
                     <br />
                   </div>

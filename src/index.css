@@ -7,7 +7,9 @@ body {
 #NewsFeedRollUp {
   background-color: white;
   padding: .5em;
-  margin: 1.5em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 #NewsFeedTitle {
@@ -41,4 +43,12 @@ body {
 
 label {
   font-size: 22px;
+}
+
+#AddArticleLinkButton {
+  background-color: white;
+  padding-left: .5em;
+  margin-left: 2em;
+  margin-bottom: .5em;
+  font-size: 12px
 }

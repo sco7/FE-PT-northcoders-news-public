@@ -103,3 +103,11 @@ export const deleteCommentById = commentId => {
   return fetch(url, { method: 'DELETE' })
 };
 
+export const postArticleToTopic = (topicId, title, body) => {
+  const url = `https://nc-be-northcoders-news.herokuapp.com/api/topics/${topicId}/articles`;
+  return fetch(`${url}`, {method: 'POST', headers: new Headers({'Content-Type': 'application/json'}), body: JSON.stringify({title, body})})
+  .then(res => {
+      return res.json()
+  })
+}
+

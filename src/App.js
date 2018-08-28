@@ -7,6 +7,7 @@ import UserView from './components/UserView';
 import TopicView from './components/TopicView';
 import AddCommentView from './components/AddCommentView';
 import CommentView from './components/CommentView';
+import AddArticleView from './components/AddArticleView';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
               <Route path="/topics/:topicId/articles" component={TopicView} />
               <Route path="/addComment/:articleId" component={AddCommentView} />
               <Route path="/comments/:commentId" component={CommentView} />
+              <Route path="/addArticle/" component={AddArticleView} />
             </Switch>
           </div>
         </div>
