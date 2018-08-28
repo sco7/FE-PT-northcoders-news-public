@@ -2,7 +2,7 @@
 
 Northcoders news is a social news aggregation and discussion sit with content rating simalar to Reddit.  Articles are divided into topics and each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted.
 
-Deployed on Heroku  https://nc-fe-northcoders-news.herokuapp.com
+Deployed on Heroku:- https://nc-fe-northcoders-news.herokuapp.com
 
 
 ## Getting Started
